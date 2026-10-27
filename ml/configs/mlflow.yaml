@@ -1,0 +1,9 @@
+tracking_uri: file:./mlruns
+experiment_name: pulsecare-sustained-abnormal-vital-trend
+run_status: research
+log_artifacts: true
+required_tags:
+  - protocol_version
+  - dataset_manifest_version
+  - split_seed
+  - model_status

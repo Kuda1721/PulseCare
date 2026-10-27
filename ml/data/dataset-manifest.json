@@ -1,0 +1,49 @@
+{
+  "manifest_version": "2026-09-11.1",
+  "protocol_version": "clinical-protocol-v1",
+  "purpose": "Phase 1C dataset readiness for sustained abnormal vital trend prediction",
+  "datasets": [
+    {
+      "id": "mit-bih-arrhythmia",
+      "display_name": "MIT-BIH Arrhythmia Database",
+      "provider": "PhysioNet",
+      "version": "1.0.0",
+      "license": "PhysioNet Credentialed/Restricted Data Use Agreement as applicable",
+      "terms_url": "https://physionet.org/content/mitdb/1.0.0/",
+      "access_state": "blocked_until_terms_accepted",
+      "required_approvals": ["terms_acceptance", "dataset_use_review"],
+      "expected_signals": ["ECG"],
+      "sample_rates_hz": [360],
+      "labels": ["beat annotations", "rhythm annotations"],
+      "known_limitations": ["arrhythmia reference set, not an inpatient wearable cohort", "does not provide the PulseCare vital label directly"]
+    },
+    {
+      "id": "bidmc-ppg-and-respiration",
+      "display_name": "BIDMC PPG and Respiration Dataset",
+      "provider": "PhysioNet",
+      "version": "1.0.0",
+      "license": "PhysioNet data use terms",
+      "terms_url": "https://physionet.org/content/bidmc/1.0.0/",
+      "access_state": "terms_accepted",
+      "required_approvals": ["terms_acceptance", "dataset_use_review"],
+      "expected_signals": ["PPG", "respiration", "heart rate", "SpO2"],
+      "sample_rates_hz": [125],
+      "labels": ["reference vital annotations"],
+      "known_limitations": ["small reference cohort", "signal and label definitions require adapter verification", "baseline target is a clearly labeled research proxy and not the original 30-minute sustained-abnormal-vital clinical outcome"]
+    },
+    {
+      "id": "mimic-iv",
+      "display_name": "MIMIC-IV",
+      "provider": "PhysioNet / MIT Laboratory for Computational Physiology",
+      "version": "2.2",
+      "license": "PhysioNet Credentialed Health Data License",
+      "terms_url": "https://physionet.org/content/mimiciv/2.2/",
+      "access_state": "blocked_pending_credentialed_access",
+      "required_approvals": ["credentialed_physionet_account", "CITI_training", "institutional_data_use_approval", "terms_acceptance"],
+      "expected_signals": ["vital signs", "clinical chart events"],
+      "sample_rates_hz": [],
+      "labels": ["must be generated from approved cohort and protocol rules"],
+      "known_limitations": ["ICU-focused and not equivalent to general ward wearable monitoring", "credentialed access required", "cohort definition must be reviewed"]
+    }
+  ]
+}

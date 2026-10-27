@@ -1,0 +1,30 @@
+experiment_name: pulsecare-sustained-abnormal-vital-trend
+protocol_version: clinical-protocol-v1
+status: research
+seed: 20260911
+horizon_minutes: 30
+context_minutes: 10
+minimum_signal_completeness: 0.80
+patient_split:
+  train: 0.70
+  validation: 0.15
+  test: 0.15
+features:
+  - heart_rate
+  - spo2
+  - systolic_bp
+  - diastolic_bp
+  - respiratory_rate
+  - temperature_c
+  - missingness_ratio
+  - signal_quality_score
+models:
+  interpretable_baseline: logistic_regression
+  future_ecg_model: reserved_for_later_phase
+metrics:
+  sensitivity_minimum: 0.85
+  specificity_minimum: 0.80
+  precision_minimum: 0.40
+  auprc_minimum: 0.40
+  brier_maximum: 0.15
+  false_alerts_per_patient_day_maximum: 2.0
